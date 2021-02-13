@@ -22,12 +22,436 @@ body, html {
     overflow-x: hidden;
 }
 
+/* Heading color */
+h1, h2, h3 {
+    color: var(--dark-grayish-blue);
+    text-align: center;
+}
+/* Paragraph color */
+p {
+    color: var(--grayish-blue);
+    text-align: center;
+    line-height: 28px;
+}
+/* Margin top 20 */
+.m-top20 {
+    margin-top: 20px;
+}
+/* Margin bottom 20 */
+.m-bottom30 {
+    margin-bottom: 30px;
+}
+/* Buttons div */
+.buttons {
+    margin: auto;
+}
+
+/* Button */
+.btn {
+    color: white;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 18px;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    /* box-shadow: 0 0.2rem rgba(121, 121, 121, 0.65); */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.btn:focus {
+    outline: none; 
+}
+
+/* iOS color */
+#ios { 
+    background-color: var(--strong-cyan);
+    border-bottom: 3px hsl(171, 66%, 34%) solid;
+    margin-right: 5px;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 5px 25px -5px hsla(171, 66%, 44%, 0.9);
+}
+/* Mac color */
+#mac {
+    background-color: var(--light-blue);
+    border-bottom: 3px hsl(233, 100%, 59%) solid;
+    margin-left: 5px;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 5px 25px -5px hsl(233, 100%, 69%, 0.9);
+}
+/* Button pressed */
+.btn:active, #ios:active, #mac:active{
+    transform: translateY(3px);
+    border-bottom: 0px hsl(171, 66%, 34%) solid;
+}
+#ios:active {
+    box-shadow: 0px 1px 25px -5px hsla(171, 66%, 44%, 0.9);
+}
+#mac:active {
+    box-shadow: 0px 1px 25px -5px hsl(233, 100%, 69%, 0.9);
+}
+/* History div */
+.history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.history h1 {
+    margin-top: 50px;
+}
+.history p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Keep track of snippets div */
+#snippets p {
+    margin-top: 20px;
+}
+
+/* Workflow */
+#workflow-items {
+    display: flex;
+}
+
+.workf-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.workf-item h2 {
+    margin-top: 35px;
+}
+
+/* Clients */
+#clients {
+    display: flex;
+}
+
+/* Clipboard */
+#clipboard {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Footer */
+footer {
+    background: hsla(202, 11%, 66%, 0.301);
+    width: 100%;
+    height: 100%;
+    padding: 25px 0 25px 0;
+}
+
+/* Footer items div */
+.footer-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-footer img {
+    height: 3rem;
+    width: 3rem; 
+}  
+
+/* list */
+ul {
+    list-style: none;
+}
+
+ul li {
+    color: var(--dark-grayish-blue);
+}
+
 /* Desktop */
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 861px) {
+    .mobile {
+        display: none;
+    }
+    /* desktop width */
+    .desktop-width {
+        max-width: 80%;
+        margin: auto;
+    }
+    /* Body */
     body {
         background: url("./img/bg-header-desktop.png");
         background-repeat: no-repeat;
         background-position: top;
-        background-size: cover;
+        background-size: 100vw;
+        width: 100%;
+        height: 100%;
+    }
+    /* Container */
+    .container {
+        /* background-color: red; */
+        max-width: 570px;
+        margin: auto;
+    }
+    /* Main */
+    .main {
+        width: 100%;
+        /* background-color: aqua; */
+    }
+    /* History - first div */
+    .history {
+        margin-top: 110px;
+    }
+    /* Keep track of snippets div */
+    #snippets {
+        margin-top: 100px;
+        margin-bottom: 70px;
+    }
+    /* PC Image + items on the right */
+    .pc-and-items {
+        height: 572px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        max-width: 100%;
+        margin: auto;
+    }
+    
+    #computer {
+        margin-left: -135px;
+    }
+    
+    /* Items on the right */
+    .items-snippets {
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: seagreen; */
+    }
+    .item-snip h3, .item-snip p{
+        text-align: left;
+    }
+    .item-snip h3 {
+        margin-bottom: 10px;
+    }
+    .item-snip {
+        margin-bottom: 50px;
+    }
+    .item-snip:last-child {
+        margin-bottom: 0;
+    } 
+
+    /* Access clipboard */
+    #clipboard {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    /* Devices image */
+    #devices {
+        display: flex;
+        margin: auto;
+        max-width: 100%;
+        height: auto;
+    }
+    /* Supercharge workflow */
+    #workflow {
+        margin-bottom: 50px;
+    }
+    /* Workflow items */
+    #workflow-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: red; */
+        width: 80%;
+        margin: auto;
+    }
+    
+    /* Clients */
+    #clients {
+        justify-content: space-between;
+        align-items: center;
+        margin: 110px auto 120px auto;
+        width: 80%;
+    }
+
+    /* Footer */
+    .logo-footer {
+        width: 20%;
+    }
+    /* List */
+    .list{
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .list p {
+        display: inline;
+        text-align: left;
+        color: var(--dark-grayish-blue);
+    }
+    /* Social */
+    .social {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .social ul {
+        display: flex;
+    }
+    .social ul li {
+        margin: 0 10px 0 10px;
+    }
+    .social ul li:last-child {
+        margin-right: 0;
+    }
+
+    footer p:hover{
+        cursor: pointer;
+        color: var(--strong-cyan);
+    }
+
+    .social-icon:hover, .social-icon:focus {
+        cursor: pointer;
+        fill: red;
+        filter: invert(59%) sepia(43%) saturate(660%) hue-rotate(122deg) brightness(94%) contrast(91%);
+    }
+    
+}
+
+/* Mobile */
+@media screen and (max-width: 860px) {
+    body {
+        background: url("./img/bg-header-mobile.png");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 100vw;
+        /* width: 100%;
+        height: 100%; */
+    }
+
+    /* Main */
+    .main {
+        max-width: 87%;
+        margin: auto;
+    }
+    /* History div */
+    .history {
+        margin-top: 90px;
+        margin-bottom: 150px;
+    }
+    .history h1{
+        font-size: 30px;
+        margin-top: 60px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 30px auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #ios { margin-right: 0;}
+    #mac {margin-left: 0;}
+
+    /* Keep track of snippets div */
+    #snippets {
+        margin-bottom: 70px;
+    }
+
+    /* Pc + listed items */
+    .pc-and-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #computer {
+        width: 100%;
+    }
+    .items-snippets {
+        margin-bottom: 150px;
+    }
+    .item-snip {
+        margin-top: 50px;
+    }
+
+    /* Devices image */
+    #devices {
+        width: 100%;
+        height: auto;
+        margin-top: 70px;
+        margin-bottom: 100px;
+    }
+
+    /* Workflow */
+    #workflow {
+        margin-bottom: 50px;
+    }
+    #workflow-items {
+        flex-direction: column;
+        margin-bottom: 100px;
+    }
+    .workf-item {
+        margin-top: 20px;
+    }
+
+    /* Clients */
+    #clients {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #clients img {
+        margin-bottom: 70px;
+    }
+
+    /* Clipboard */
+    #clipboard {
+        margin-top: 100px;
+        margin-bottom: 180px;
+    }
+    
+    /* Footer */
+    .footer-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-footer {
+        margin-top: 30px;
+    }
+
+    /* Middle list */
+    .list {
+        grid-template-columns: repeat(1, 1fr);
+        color: var(--dark-grayish-blue);
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .list div {
+        padding: 10px;
+        
+    }
+    .list p {
+        color: var(--dark-grayish-blue);
+    }
+
+    /* Social icons */
+    .social ul {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .social ul li{
+        margin: 0 17px 0 17px;
     }
 }
